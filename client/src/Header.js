@@ -2,9 +2,16 @@ import {Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
 import { useTheme } from "@mui/material";
-import {FaMicroblog} from 'react-icons/fa'
+import {FaMicroblog} from 'react-icons/fa';
+import styled from "@emotion/styled";
 
-
+const HeaderButtons=styled.div`
+display: flex;
+justify-content:space-between;
+align-items: center;
+min-width: 200px;
+cursor: pointer;
+`;
 export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   const theme=useTheme()
@@ -35,15 +42,19 @@ export default function Header() {
       <nav>
         {username && (
           <>
-            <Link to="/create">Create new post</Link>
+            <Link to="/create">CREATE</Link>
             <a onClick={logout}>Logout ({username})</a>
           </>
         )}
         {!username && (
-          <div className="headerbuttons">
+          <HeaderButtons>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
-          </div>
+            <a 
+            href="https://akankip1.github.io/Portfolio-Ashrit-Kankipati/" target="_blank">Contact </a>
+          </HeaderButtons>
+            
+          
         )}
       </nav>
     </header>
