@@ -1,9 +1,13 @@
 import {Link} from "react-router-dom";
 import {useContext, useEffect, useState} from "react";
 import {UserContext} from "./UserContext";
+import { useTheme } from "@mui/material";
+import {FaMicroblog} from 'react-icons/fa'
+
 
 export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
+  const theme=useTheme()
   useEffect(() => {
     fetch('http://localhost:4000/profile', {
       credentials: 'include',
@@ -26,7 +30,8 @@ export default function Header() {
 
   return (
     <header className="nav">
-      <Link to="/" className="logo">MyBlog</Link>
+      
+      <Link to="/" className="logo"><FaMicroblog/>MyBlog</Link>
       <nav>
         {username && (
           <>
@@ -35,10 +40,10 @@ export default function Header() {
           </>
         )}
         {!username && (
-          <>
+          <div className="headerbuttons">
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
-          </>
+          </div>
         )}
       </nav>
     </header>
