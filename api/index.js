@@ -17,7 +17,7 @@ const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 const dotenv = require('dotenv');
 dotenv.config();
 
-app.use(cors({credentials:true,origin:'https://f1-blog-ten.vercel.app/'}));
+app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
