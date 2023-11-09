@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://f1-blog-ten.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
