@@ -9,7 +9,7 @@ export default function PostPage() {
   const {userInfo} = useContext(UserContext);
   const {id} = useParams();
   useEffect(() => {
-    fetch(`f1-blog-ashrit-back.vercel.app/post/${id}`)
+    fetch(`http://localhost:4000/post/${id}`)
       .then(response => {
         response.json().then(postInfo => {
           setPostInfo(postInfo);
