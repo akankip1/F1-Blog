@@ -18,7 +18,12 @@ const secret = process.env.SECRET;
 
 
 
-app.use(cors({credentials:true,origin:'f1-blog-ashrit.vercel.app'}));
+const corsOptions = {
+  origin: 'https://f1-blog-ashrit-front.vercel.app',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
