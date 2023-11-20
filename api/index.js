@@ -19,7 +19,7 @@ const secret = process.env.SECRET;
 
 
 const corsOptions = {
-  origin: 'https://f1-blog-ashrit-front.vercel.app',
+  origin: 'https://f1-blog-ashrit-front.vercel.app/',
   credentials: true,
 };
 

@@ -11,7 +11,7 @@ export default function EditPost() {
   const [redirect,setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch('f1-blog-ashrit-back.vercel.app/post/'+id)
+    fetch('http://localhost:4000/post/'+id)
       .then(response => {
         response.json().then(postInfo => {
           setTitle(postInfo.title);
