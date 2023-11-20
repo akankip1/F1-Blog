@@ -16,7 +16,7 @@ export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   const theme=useTheme()
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('f1-blog-ashrit-back.vercel.app/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('f1-blog-ashrit-back.vercel.app/logout', {
       credentials: 'include',
       method: 'POST',
     });
